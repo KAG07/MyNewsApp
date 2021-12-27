@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/BreakingnewsFragment">
+    <fragment
+        android:id="@+id/BreakingnewsFragment"
+        android:name="com.example.mynews.ui.fragments.BreakingnewsFragment"
+        android:label="BreakingNewsFragment">
+        <action
+            android:id="@+id/action_BreakingnewsFragment_to_ArticlenewsFragment"
+            app:destination="@id/ArticlenewsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/SavednewsFragment"
+        android:name="com.example.mynews.ui.fragments.SavednewsFragment"
+        android:label="SavedNewsFragment">
+
+        <action
+            android:id="@+id/action_SavednewsFragment_to_ArticlenewsFragment"
+            app:destination="@id/ArticlenewsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchnewsFragment"
+        android:name="com.example.mynews.ui.fragments.SearchnewsFragment"
+        android:label="SearchnewsFragment">
+        <action
+            android:id="@+id/action_SearchnewsFragment_to_ArticlenewsFragment"
+            app:destination="@id/ArticlenewsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/ArticlenewsFragment"
+        android:name="com.example.mynews.ui.fragments.ArticlenewsFragment"
+        android:label="ArticleNewsFragment">
+
+    </fragment>
+
+
+</navigation>
