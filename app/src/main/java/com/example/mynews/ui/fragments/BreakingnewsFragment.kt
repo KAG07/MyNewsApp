@@ -6,10 +6,10 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mynews.R
 import com.example.mynews.ui.Db.ArticleDatabase
-import com.example.mynews.ui.NewsActivity
 import com.example.mynews.ui.NewsViewModelProvidefactry
 import com.example.mynews.ui.NewsViewmodel
 import com.example.mynews.ui.adapter.Newsadapter
@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.breakingnews.*
 
 
 class BreakingnewsFragment:Fragment(R.layout.breakingnews) {
-    var viewmodel:NewsViewmodel?=null
+    lateinit  var viewmodel:NewsViewmodel
     lateinit var newsadapter:Newsadapter
 
      val TAG="BREAKINGNEWS"
@@ -30,7 +30,17 @@ class BreakingnewsFragment:Fragment(R.layout.breakingnews) {
         viewmodel = ViewModelProvider(this, vmProviderFactory).get(NewsViewmodel::class.java)
 
         setuprecyclerview()
-        viewmodel?.breakingnew?.observe(viewLifecycleOwner, Observer {
+
+        newsadapter.setOnItemClicklistener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(
+                R.id.action_BreakingnewsFragment_to_ArticlenewsFragment,
+                bundle
+            )
+        }
+        viewmodel.breakingnew.observe(viewLifecycleOwner, Observer {
             when(it){
                 is Resource.success->{
                     hideprogressbar()

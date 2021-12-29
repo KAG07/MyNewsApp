@@ -38,7 +38,7 @@ class Newsadapter:RecyclerView.Adapter<Newsadapter.ArticleViewHolder>() {
             tvTitle.text=article.title
             tvDescription.text=article.description
             tvPublishedAt.text=article.publishedAt
-            setOnItemClicklistener {
+            setOnClickListener {
                 onItemClickListener?.let { it(article) }
             }
         }
@@ -48,9 +48,9 @@ class Newsadapter:RecyclerView.Adapter<Newsadapter.ArticleViewHolder>() {
        return differ.currentList.size
     }
 
-    private var onItemClickListener:((Article)->Unit)?=null
+    private var onItemClickListener: ((Article) -> Unit)? = null
 
-    fun setOnItemClicklistener(listener:(Article)->Unit){
-        onItemClickListener=listener
+    fun setOnItemClicklistener(listener: (Article) -> Unit) {
+        onItemClickListener = listener
     }
 }

@@ -48,6 +48,9 @@
         android:name="com.example.mynews.ui.fragments.ArticlenewsFragment"
         android:label="ArticleNewsFragment">
 
+        <argument
+            android:name="article"
+            app:argType="com.example.mynews.ui.models.Article" />
     </fragment>
 
 
