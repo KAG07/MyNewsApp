@@ -6,7 +6,7 @@ import com.example.mynews.ui.models.Source
 
 public class Converters {
     @TypeConverter
-    fun fromSource(source: Source):String{
+    fun fromSource(source: Source): String? {
         return source.name
     }
     @TypeConverter

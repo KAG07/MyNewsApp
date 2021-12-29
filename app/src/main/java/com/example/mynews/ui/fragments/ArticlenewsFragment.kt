@@ -12,6 +12,7 @@ import com.example.mynews.ui.NewsActivity
 import com.example.mynews.ui.NewsViewModelProvidefactry
 import com.example.mynews.ui.NewsViewmodel
 import com.example.mynews.ui.repository.Newsrepository
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.articlenews.*
 
 class ArticlenewsFragment:Fragment(R.layout.articlenews) {
@@ -26,7 +27,12 @@ class ArticlenewsFragment:Fragment(R.layout.articlenews) {
         val article=args.article
         webView.apply {
             webViewClient= WebViewClient()
-            article.url?.let { loadUrl(it) }
+            loadUrl(article.url!!)
+        }
+
+        fab.setOnClickListener {
+            viewmodel.savenews(article)
+            Snackbar.make(view,"Article Saved",Snackbar.LENGTH_SHORT).show()
         }
     }
 }

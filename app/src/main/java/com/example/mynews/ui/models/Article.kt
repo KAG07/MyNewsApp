@@ -9,13 +9,13 @@ import java.io.Serializable
 )
 data class Article(
     @PrimaryKey(autoGenerate = true)
-    var id:Int,
-    var author: String,
-    var content: String,
-    var description: String,
-    var publishedAt: String,
-    var source: Source,
-    var title: String,
-    var url: String?=null,
-    var urlToImage: String
+    var id:Int?,
+    var author: String?,
+    var content: String?,
+    var description: String?,
+    var publishedAt: String?,
+    var source: Source?,
+    var title: String?,
+    var url: String?,
+    var urlToImage: String?
 ):Serializable
