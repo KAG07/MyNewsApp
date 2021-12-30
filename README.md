@@ -17,10 +17,10 @@ The project uses many concept as described you can read about them from the docu
 
   
 ## Screenshots
-
-![App Screenshot](https://i.postimg.cc/2S7WZzZ7/photo-2021-12-30-23-10-08.jpg)    
-![App Screenshot](https://i.postimg.cc/Qdh9sRy9/photo-2021-12-30-23-10-14.jpg)
-
+<p float="left">
+<img src="https://i.postimg.cc/2S7WZzZ7/photo-2021-12-30-23-10-08.jpg" height="600"/>    
+<img src="https://i.postimg.cc/Qdh9sRy9/photo-2021-12-30-23-10-14.jpg" height="600"/>
+</p>
   
 ### Documentation
 
